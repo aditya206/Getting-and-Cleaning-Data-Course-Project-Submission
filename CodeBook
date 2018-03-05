@@ -1,0 +1,31 @@
+#About the Source Data
+Quoted from the website - "The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. 
+Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone 
+(Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial 
+angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has 
+been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data." 
+
+#How to Start Data Cleaning and other operations
+Download the source data from the given link using the R script, unzip it and start working
+
+#Sequence of operations performed in the R script
+a) Start of with loading the dplyr package
+b) Creating a directory named data within the working directory
+c) Unzip dataSet to /data directory
+d) Reading of training and testing data sets
+e) Reading feature vector and activity labels vector
+f) Assigning column names
+g) Merging of Training and Testing Data into one dataset using cbind
+h) Merging of both Dataframes into one dataset using rbind
+i) Creating a character vector of Column Names and then creating a logical vector containing certain keywords
+j) Subsetting the Combined Data using the logical vector
+k) Merging with activityLables dataset to give descriptive activity names
+l) Creating a second dataset with the mean of each variable for each activity and each subject
+m) Writing the data to a text file
+
+#Describing the Variables
+a) X_train, Y_train, X_test, Y_test, subject_train and subject_test contain the data from the downloaded files
+b) merge_training, merge_testing the training and testing data frames into 2 standalone data frames
+c) CmbndData combines the 2 dataframes from step (b) into a single unified dataframe
+d) MeanStd_withNames is obtained from the CmbndData in step (c)
+e) aggdata is the second tidy data that aggreagtes the results based on Volunteer Id and activity Id
